@@ -64,8 +64,17 @@ zkdenxczyooloczcaahnkehbwimvieedpdlqfafbqvxvfmvabd
 random_string = random_string.replace("\n","") #remove all newline characters
 print(len(random_string)) # Print out the size for reference 
 
+letters = {}
+for letter in random_string:
+    if letter in letters:
+        letters[letter] += 1
+    else:
+        letters[letter] = 1
+letters_sorted = dict(sorted(letters.items()))
+print(letters_sorted)
+
 # Above is a string with 2500 characters.
-# Create a program that goes through and counts the occurrence of each character, excluding \n using a  dictionary
+# Create a program that goes through and counts the occurrence of each character, excluding \n using a dictionary
 # Output each letter and its corresponding occurrence in alphabetical order
 # Output which letter occurred the most 
 # Output which letter occurred the least 
@@ -88,8 +97,15 @@ print(len(random_string)) # Print out the size for reference
 print("*"*75)
 # Output which letter occurred the most 
 
-most_occurred = ""
-least_occurred = ""
+most_occurred = "a"
+least_occurred = "z"
+
+for key in letters_sorted.keys():
+    if letters_sorted[key] > letters_sorted[most_occurred]:
+        most_occurred = key
+for key in letters_sorted.keys():
+    if letters_sorted[key] < letters_sorted[least_occurred]:
+        least_occurred = key
 
 print(f"The letter that occurred the most is {most_occurred}")
 print("*"*75)
@@ -98,3 +114,9 @@ print(f"The letter that occurred the most is {least_occurred}")
 print("*"*75)
 
 # Output what the percentage of the string each character is, again in alphabetical
+
+letter_percents = {}
+for letter, count in letters_sorted.items():
+    percent = (count / len(random_string) * 100)
+    letter_percents[letter] = percent
+print(letter_percents)
