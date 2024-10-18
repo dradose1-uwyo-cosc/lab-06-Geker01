@@ -1,8 +1,8 @@
-# Your Name Here
+# Garrett Eker
 # UWYO COSC 1010
-# Submission Date
+# 10/17/24
 # Lab 06
-# Lab Section: 
+# Lab Section: 13
 # Sources, people worked with, help given to: 
 # your
 # comments
